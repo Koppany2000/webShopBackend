@@ -21,9 +21,6 @@ public class ProductController {
     private final CategoryService categoryService;
     private final ProductService productService;
 
-    /**
-     * Show All Categories
-     */
 
     @GetMapping("/product")
     public Page<ProductInfo> findAll(@RequestParam(value = "page", defaultValue = "1") Integer page,
@@ -36,12 +33,6 @@ public class ProductController {
     public ProductInfo showOne(@PathVariable("productId") String productId) {
 
         ProductInfo productInfo = productService.findOne(productId);
-
-//        // Product is not available
-//        if (productInfo.getProductStatus().equals(ProductStatusEnum.DOWN.getCode())) {
-//            productInfo = null;
-//        }
-
         return productInfo;
     }
 

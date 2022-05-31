@@ -49,9 +49,7 @@ public class OrderMain implements Serializable {
     @NotNull
     private BigDecimal orderAmount;
 
-    /**
-     * default 0: new order.
-     */
+
     @NotNull
     @ColumnDefault("0")
     private Integer orderStatus;

@@ -36,7 +36,6 @@ public class ProductInfo implements Serializable {
 
     private String productIcon;
 
-    /** 0: on-sale 1: off-sale */
 
     @ColumnDefault("0")
     private Integer productStatus;

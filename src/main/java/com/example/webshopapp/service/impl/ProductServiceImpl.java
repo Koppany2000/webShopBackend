@@ -78,7 +78,7 @@ public class ProductServiceImpl implements ProductService {
             throw new MyException(ResultEnum.PRODUCT_STATUS_ERROR);
         }
 
-        //更新
+
         productInfo.setProductStatus(ProductStatusEnum.DOWN.getCode());
         return productInfoRepository.save(productInfo);
     }
@@ -93,7 +93,7 @@ public class ProductServiceImpl implements ProductService {
             throw new MyException(ResultEnum.PRODUCT_STATUS_ERROR);
         }
 
-        //更新
+
         productInfo.setProductStatus(ProductStatusEnum.UP.getCode());
         return productInfoRepository.save(productInfo);
     }
@@ -101,7 +101,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public ProductInfo update(ProductInfo productInfo) {
 
-        // if null throw exception
+
         categoryService.findByCategoryType(productInfo.getCategoryType());
         if(productInfo.getProductStatus() > 1) {
             throw new MyException(ResultEnum.PRODUCT_STATUS_ERROR);

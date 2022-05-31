@@ -81,7 +81,7 @@ public class CartController {
 
     @PostMapping("/checkout")
     public ResponseEntity checkout(Principal principal) {
-        User user = userService.findOne(principal.getName());// Email as username
+        User user = userService.findOne(principal.getName());
         cartService.checkout(user);
         return ResponseEntity.ok(null);
     }

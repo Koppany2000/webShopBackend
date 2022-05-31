@@ -22,7 +22,6 @@ public class Cart implements Serializable {
     @OneToOne(fetch = FetchType.LAZY)
     @MapsId
     @JsonIgnore
-//    @JoinColumn(name = "email", referencedColumnName = "email")
     private User user;
 
     @OneToMany(cascade = CascadeType.ALL,

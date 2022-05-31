@@ -82,7 +82,7 @@ public class OrderServiceImpl implements OrderService {
         orderMain.setOrderStatus(OrderStatusEnum.CANCELED.getCode());
         orderRepository.save(orderMain);
 
-        // Restore Stock
+
         Iterable<ProductInOrder> products = orderMain.getProducts();
         for(ProductInOrder productInOrder : products) {
             ProductInfo productInfo = productInfoRepository.findByProductId(productInOrder.getProductId());
